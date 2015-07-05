@@ -1,0 +1,40 @@
+<section data-ng-controller="HomeController">
+		<div class="jumbotron text-center">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+				LOGO!!
+				<!--<img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/img/brand/logo.png" />-->
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<p class="lead">
+				<h3><span class="label label-success">No te pierdas las oportunidades</span></h3>
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+				<div class="input-group">
+					<input ng-model="searchText" type="text" class="form-control" placeholder="Peluquería...">
+		      		<span class="input-group-btn">
+			        	<button class="btn btn-default" type="button">Buscar!</button>
+			    	</span>
+			    </div>
+			 </div>
+				<!--<a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Más info.</a>-->
+		</div>
+
+	</div>
+  <div class="list-group">
+    <a data-ng-repeat="user in users | filter:searchText" data-ng-href="#!/user/{{user._id}}" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="user.displayName"></span>
+        by
+        <span data-ng-bind="user.address"></span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="user.displayName"></h4>
+      <p class="list-group-item-text" data-ng-bind="user.address"></p>
+    </a>
+  </div>
+</section>
